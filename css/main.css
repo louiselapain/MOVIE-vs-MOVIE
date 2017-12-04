@@ -3,41 +3,46 @@
 #outer-wrapper {
   display:flex;
   flex-flow: row wrap;
-  width: 1280px;
-  height: 800px;
+  width: 100vw;
+  height: 100vh;
   margin:0 auto;
-  border: 1px solid black;
-  background-color: #151E46;
-  justify-content: center;
+  background-color: green;
+/*   border: 1px solid black */
 }
 
 #vs{
   width: 200px; 
   height: 200px;
-  border: 1px solid black;
-  margin-top:268px;
-  margin-right:34px;
-  margin-left:34px;
-  box-shadow: inset 0 0 20px black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -70px 0 0 -170px;
+  z-index: 100;
+/*   border: 1px solid black; */
 }
 
-.movie-poster{
-  width: 400px;
-  height: 600px;
-  border: 1px solid black;
-  margin-top:68px;
-  margin-right:34px;
-  margin-left:34px;
+.movie-poster-one-bg{
+  width: 50vw;
+  height: 100vh;
+  background-color: orange;
+/*   border: 1px solid black; */
+}
+  
+ .movie-poster-two-bg{
+  width: 50vw;
+  height: 100vh;
+  background-color: yellow;
+/*   border: 1px solid black; */
 }
 
-#generate{
+/* #generate{
   background-color: FireBrick;
   width: 200px;
   height: 50px;
   border-radius: 40px;
   align-height: 50px;
   box-shadow: inset 0 0 20px black;
-}
+} */
 
 
 
