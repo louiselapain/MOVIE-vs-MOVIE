@@ -1,0 +1,45 @@
+@import url('reset.css');
+
+#outer-wrapper {
+  display:flex;
+  flex-flow: row wrap;
+  width: 1280px;
+  height: 800px;
+  margin:0 auto;
+  border: 1px solid black;
+  background-color: #151E46;
+  justify-content: center;
+}
+
+#vs{
+  width: 200px; 
+  height: 200px;
+  border: 1px solid black;
+  margin-top:268px;
+  margin-right:34px;
+  margin-left:34px;
+  box-shadow: inset 0 0 20px black;
+}
+
+.movie-poster{
+  width: 400px;
+  height: 600px;
+  border: 1px solid black;
+  margin-top:68px;
+  margin-right:34px;
+  margin-left:34px;
+}
+
+#generate{
+  background-color: FireBrick;
+  width: 200px;
+  height: 50px;
+  border-radius: 40px;
+  align-height: 50px;
+  box-shadow: inset 0 0 20px black;
+}
+
+
+
+
+
