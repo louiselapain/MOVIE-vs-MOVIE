@@ -1,45 +1,86 @@
 @import url('reset.css');
 
-#outer-wrapper {
-  display:flex;
-  flex-flow: row wrap;
-  width: 1280px;
-  height: 800px;
-  margin:0 auto;
-  border: 1px solid black;
-  background-color: #151E46;
-  justify-content: center;
+#btn{
+  width: 200px;
+  height: 50px;
+  border-radius: 20px;
+  background-color:black;
+  line-height: 50px;
+  position: absolute;
+  top: 80%;
+  left: 44%;
+}
+
+#outer-wrapper{
+  background-color:green;
+/*   display:flex; */
+/*   flex-flow: wrap; */
+  height:100vh;
+  width:100vw;
+  margin: 0 auto;
+  
+}
+
+.movie-poster-one-bg{
+  height:100vh;
+  width:50vw;
+  background-color:yellow;
+  float:left;
+  
+}
+.grow-left{
+  animation-name: grow-left;
+  animation-duration: .5s;
+  animation-timing-function:ease-in;
 }
 
 #vs{
-  width: 200px; 
-  height: 200px;
-  border: 1px solid black;
-  margin-top:268px;
-  margin-right:34px;
-  margin-left:34px;
-  box-shadow: inset 0 0 20px black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+   margin: -70px 0 0 -170px;
+  z-index:100;
 }
 
-.movie-poster{
-  width: 400px;
-  height: 600px;
-  border: 1px solid black;
-  margin-top:68px;
-  margin-right:34px;
-  margin-left:34px;
+.rotate{
+   animation-name:rotate;
+  animation-duration:1s;
+  animation-timing-function:ease-in;
+  animation-iteration-count: infinite;
 }
 
-#generate{
-  background-color: FireBrick;
-  width: 200px;
-  height: 50px;
-  border-radius: 40px;
-  align-height: 50px;
-  box-shadow: inset 0 0 20px black;
+.movie-poster-two-bg{
+  height:100vh;
+  width:50vw;
+  float:right;
+  background-color:orange;
+}
+
+.grow-right{
+   animation-name: grow-right;
+  animation-duration: .5s;
+  animation-timing-function:ease-in;
 }
 
 
+/* The animation code */
+@keyframes grow-left {
+    from {width:0vw}
+    to {width:50vw}
+}
 
+@keyframes grow-right {
+    from {width:0vw}
+    to {width:50vw}
+}
 
-
+@keyframes rotate {
+  0% {transform: rotate(0deg);
+  opacity: 0;}
+  50%{transform: rotate(7deg);}
+  
+  
+  
+  
+  
+  
