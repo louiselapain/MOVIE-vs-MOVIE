@@ -1,5 +1,14 @@
 @import url('reset.css');
 
+#outer-wrapper{
+  background-color:green;
+/*   display:flex; */
+/*   flex-flow: wrap; */
+  height:100vh;
+  width:100vw;
+  margin: 0 auto; 
+  }
+
 #btn{
   width: 200px;
   height: 50px;
@@ -10,31 +19,20 @@
   top: 80%;
   left: 44%;
 }
-
-#outer-wrapper{
-  background-color:green;
-/*   display:flex; */
-/*   flex-flow: wrap; */
-  height:100vh;
-  width:100vw;
-  margin: 0 auto;
-  
-}
-
-.movie-poster-one-bg{
+.movie-poster-one{
   height:100vh;
   width:50vw;
   background-color:yellow;
   float:left;
-  
 }
+
 .grow-left{
   animation-name: grow-left;
   animation-duration: .5s;
   animation-timing-function:ease-in;
 }
 
-#versus{
+#vs{
   position: absolute;
   top: 50%;
   left: 55%;
@@ -49,7 +47,14 @@
   animation-iteration-count: infinite;
 }
 
-.movie-poster-two-bg{
+.fade-in{
+  animation-name: fade-in;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in;
+  opacity:50;
+}
+
+.movie-poster-two{
   height:100vh;
   width:50vw;
   float:right;
@@ -65,20 +70,24 @@
 
 /* The animation code */
 @keyframes grow-left {
-    from {width:0vw}
-    to {width:50vw}
+    0% {width:0vw}
+    100% {width:50vw}
 }
 
 @keyframes grow-right {
-    from {width:0vw}
-    to {width:50vw}
+    0% {width:0vw}
+    100% {width:50vw}
 }
 
 @keyframes rotate {
   0% {transform: rotate(0deg);
   opacity: 0;}
-  50%{transform: rotate(7deg);}
+  50%{transform: rotate(7deg);}}
   
+  @keyframes fade-in {
+   from {opacity:0}
+   to {opacity:100}
+  }
   
   
   
