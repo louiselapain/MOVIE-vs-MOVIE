@@ -1,28 +1,50 @@
-<html>
-    <head>
-        <title>
-        Movie vs Movie
-        </title>
-        <link rel="stylesheet" type="text/css" href="css/main.css">
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-        <script type= "text/javascript" src= "js/main.js"> </script>
-  </head>
-  <body>
-    
-      <div id="outer-wrapper">
-
-            <div class="movie-poster-one">
-            </div>
-        
-            <div id="vs">
-              <img src="img/versus.png" alt="versus"></img>
-            </div>
-        
-            <div class="movie-poster-two"></div>
+<!-- HTML 5 DOCTYPE -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <!-- WEB SITE TITLE -->
+    <title>Movie Vs Movie</title>
+    <!-- ADDITION OF CSS HERE -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!-- 
+        ADDITION OF EXTERNAL JS FILES 
+        Need to call Jquery first before we call any of our scripits, or they won't run
+        WE will pull in a cdn of jquery, that way we always have the latest version.(Need access to internet for this to work.)
+    -->
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+    <!-- ADDITION OF LOCAL JS FILES -->
+    <script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
+    <!-- Create an outer wrapper to hold everything -->
+    <div id="outer-wrapper">
+        <div class="movie-poster" id="poster">
+              
+         </div>
+        <!-- Create an empty div for our left side -->
+        <div class="movie-left">
+        <!-- Create an empty div to hold some content  -->
+          <div id="mOne" class="mp">
           
-            <div id="btn"></div>
-           </div>
+          </div>
+        </div>
+        <div class="vs"></div>
+        <!-- Create an empty div for our right side. -->
+        <div class="movie-right">
+           <!-- Create an empty div to hold some content  -->
+            <div id="mTwo" class="mp">
+            </div>
+        </div>
 
+        <div class="generate-btn">
+            <h1>CLICK ME</h1>
+        </div>
     </div>
-  </body>
+</body>
 </html>

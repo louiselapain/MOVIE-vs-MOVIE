@@ -1,95 +1,101 @@
-@import url('reset.css');
-
-#outer-wrapper{
-  background-color:green;
-/*   display:flex; */
-/*   flex-flow: wrap; */
-  height:100vh;
-  width:100vw;
-  margin: 0 auto; 
-  }
-
-#btn{
-  width: 200px;
-  height: 50px;
-  border-radius: 20px;
-  background-color:black;
-  line-height: 50px;
-  position: absolute;
-  top: 80%;
-  left: 44%;
+/* Import CSS file from external file */
+@import url(reset.css);
+body {
+  color:white;
 }
-.movie-poster-one{
-  height:100vh;
-  width:50vw;
-  background-color:yellow;
-  float:left;
+#outer-wrapper {
+    width:100vw;
+    height:100vh;
+    background-color:black;
+    position:relative;
 }
 
-.grow-left{
-  animation-name: grow-left;
-  animation-duration: .5s;
-  animation-timing-function:ease-in;
+.movie-left{
+    /* Set the initial width to zero so we have something that can grow */
+    width:0vw;
+    height: 100vh;
+    float: left;
+    background-color: yellow;
 }
 
-#vs{
-  position: absolute;
-  top: 50%;
-  left: 55%;
-   margin: -70px 0 0 -170px;
-  z-index:100;
+.movie-right{
+     /* Set the initial width to zero so we have something that can grow */
+    width:0vw;
+    height: 100vh;
+    float: right;
+    background-color: orange;
 }
 
-.rotate{
-   animation-name:rotate;
-  animation-duration:1s;
-  animation-timing-function:ease-in;
-  animation-iteration-count: infinite;
+.slide-in-left {
+    /* Create animation Classes that we can add onto our elements */
+    animation-name:slide-left;
+     /* Give the animations a duration */
+     animation-duration: 1s;
+     /* Use this to make sure the animation stops at the end */
+     animation-fill-mode: forwards;
 }
 
-.fade-in{
-  animation-name: fade-in;
-  animation-duration: 1.5s;
-  animation-timing-function: ease-in;
-  opacity:50;
+.slide-in-right {
+     /* Create animation Classes that we can add onto our elements */
+     /* Give the animations a name */
+    animation-name:slide-right;
+     /* Give the animations a duration */
+    animation-duration: 1s;
+    /* Use this to make sure the animation stops at the end */
+    animation-fill-mode: forwards;
+    
 }
 
-.movie-poster-two{
-  height:100vh;
-  width:50vw;
-  float:right;
-  background-color:orange;
+.mp {
+  width:400px;
+  position:relative;
 }
 
-.grow-right{
-   animation-name: grow-right;
-  animation-duration: .5s;
-  animation-timing-function:ease-in;
+.movie-p {
+  width:300px;
+  height:500px;
+  background-color:red;
+}
+
+/* Lets create a Movie Poster Div here to hold all the content  */
+
+/* .movie-poster{
+  width:300px;
+  height:600px;
+  background-color:red;
+  position:absolute;
+  z-index:1;
+  left:10%;
+  top:10%;
+} */
+
+
+
+/* We will setup two IDs here for the different movies and apply positioning here.  */
+
+
+.generate-btn {
+    width:300px;
+    height:100px;
+    position:absoloute;
+    background-color: red;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 25px;
+    line-height: 100px;
+    color:white;
+    text-align: center;
+    margin: -70px 0 0 -170px;
+}
+
+@keyframes slide-left {
+    0% {width:0vw;}
+    100%{width:50vw;}
 }
 
 
-/* The animation code */
-@keyframes grow-left {
-    0% {width:0vw}
-    100% {width:50vw}
+@keyframes slide-right {
+    0% {width:0vw;}
+    100%{width:50vw;}
 }
-
-@keyframes grow-right {
-    0% {width:0vw}
-    100% {width:50vw}
-}
-
-@keyframes rotate {
-  0% {transform: rotate(0deg);
-  opacity: 0;}
-  50%{transform: rotate(7deg);}}
-  
-  @keyframes fade-in {
-   from {opacity:0}
-   to {opacity:100}
-  }
-  
-  
-  
-  
-  
