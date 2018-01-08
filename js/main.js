@@ -82,7 +82,7 @@ $(document).ready(function(){
             imgName:"expendables.jpg",
             id: "EXPENDABLES",
             directorName: "Simon West",
-            posterName: "tgs-post.jpg",
+            posterName: "expen-post.jpg",
         }
      }
     
@@ -111,13 +111,17 @@ ranNumTwo = getRandomNumber(0,7);
   console.log(movieList[ranNumOne].movie.title);
   console.log(movieList[ranNumTwo].movie.title);
   
-  var movieImgOne = '../img/' + movieList[ranNumOne].movie.imgName,
-      movieImgTwo = '../img/' + movieList[ranNumTwo].movie.imgName,
+  var movieImgOne = 'img/' + movieList[ranNumOne].movie.imgName,
+      movieImgTwo = 'img/' + movieList[ranNumTwo].movie.imgName,
       movieOneId = movieList[ranNumOne].movie.id,
       movieTwoId = movieList[ranNumTwo].movie.id,
       movieTitleOne = movieList[ranNumOne].movie.title,
+      movieTitleTwo = movieList[ranNumTwo].movie.title,
       movieRatingList = movieList[ranNumOne].movie.movieRating,
       moviePosterImgOne = 'img/' + movieList[ranNumOne].movie.posterName;
+      movieTitleTwo = movieList[ranNumTwo].movie.title,
+      movieRatingListTwo = movieList[ranNumTwo].movie.movieRating,
+      moviePosterImgTwo = 'img/' + movieList[ranNumTwo].movie.posterName;
   
   
 //   $('#mp-one').append($('<img>',{id:movieOneId,src:'img/' + movieImgOne, class:'mp' }));
@@ -127,22 +131,28 @@ ranNumTwo = getRandomNumber(0,7);
   
   $('.movie-left').css({
 
-      'background-image':'url('+movieImgOne+')',
+      'background-image':'url('+ movieImgOne +')',
       'background-size': 'cover',
       'background-repeat':'no-repeat',
       'background-position': '30% 30%',
       'filter':'opacity(.25) grayscale(100%) contrast(130%)',
-      'background-color': 'black'
+      'background-color': 'black',
+      'position':'absolute',
+      'top':'0'
+  
 
   });
   $('.movie-right').css({
 
-      'background-image':'url('+movieImgTwo+')',
+      'background-image':'url('+ movieImgTwo +')',
       'background-size': 'cover',
       'background-repeat':'no-repeat',
       'background-position': '30% 30%',
       'filter':'opacity(.25) grayscale(100%) contrast(130%)',
-      'background-color': 'black'
+      'background-color': 'black',
+      'position':'absolute',
+      'top':'0'
+      
   });
   
   
@@ -181,10 +191,18 @@ ranNumTwo = getRandomNumber(0,7);
         
 //        Set a variable here for the creation of a div on the fly.
           var newElement = document.createElement('div');
-          var newTarget = document.getElementById('poster');
+          newElement.className = 'poster';
+          newElement.id = 'movie-one';
+          var newTarget = document.getElementById('poster-left');
         
         
 //         Create a new elemt
+            $('<div></div>', {
+                text: '',
+                html: '<img src="'+ moviePosterImgOne +'"/>',
+                class: 'movie-post',
+            }).appendTo(newElement);
+
             $('<div></div>', {
                                 text: '',
                                 html: '<h2> ' + movieTitleOne + ' </h2>',
@@ -195,11 +213,7 @@ ranNumTwo = getRandomNumber(0,7);
                                 html: '<h2> ' + movieRatingList + ' </h2>',
                                 class: 'movie-rating',
                             }).appendTo(newElement);
-              $('<div></div>', {
-                                text: '',
-                                html: '<img src="'+ moviePosterImgOne +'"/>',
-                                class: 'movie-post',
-                            }).appendTo(newElement);
+           
 
             newTarget.appendChild(newElement);
         
@@ -210,6 +224,33 @@ ranNumTwo = getRandomNumber(0,7);
       
          $('.movie-right').one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e){
 //         We will append the poster graphic here on click
+//        Set a variable here for the creation of a div on the fly.
+var newElement = document.createElement('div');
+newElement.className = 'poster';
+var newTarget = document.getElementById('poster-right');
+
+
+//         Create a new elemt
+            $('<div></div>', {
+                text: '',
+                html: '<img src="'+ moviePosterImgTwo +'"/>',
+                class: 'movie-post',
+            }).appendTo(newElement); 
+
+            $('<div></div>', {
+                                text: '',
+                                html: '<h2> ' + movieTitleTwo + ' </h2>',
+                                class: 'movie-title',
+                            }).appendTo(newElement);
+            $('<div></div>', {
+                                text: 'this is a test',
+                                html: '<h2> ' + movieRatingListTwo + ' </h2>',
+                                class: 'movie-rating',
+                            }).appendTo(newElement);
+
+
+  newTarget.appendChild(newElement);
+
         console.log("right-finished");
       });
       
